@@ -18,7 +18,7 @@ jobs:
           env:
               DELTAKIT_TOKEN: ${{ secrets.DELTAKIT_TOKEN }}
           if: ${{ env.DELTAKIT_TOKEN != '' }}
-          run: echo "::set-output name=exists::true"
+          run: echo "exists=true" >> $GITHUB_OUTPUT
 
   build-docs:
     needs: [check-deltakit-token]
